@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -14,5 +16,12 @@ public class Main {
         System.out.println(studentDB);
         System.out.println(studentDB.getAllStudents());
         System.out.println(studentDB.randomStudent());
+
+        System.out.println("rausgesucht:");
+        try {
+            System.out.println(studentDB.findById("999"));
+        } catch (NoSuchElementException e) {
+            System.out.println("nicht gefunden");
+        }
     }
 }
